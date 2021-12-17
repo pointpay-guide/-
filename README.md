@@ -20,18 +20,22 @@ JS를 통한 팝업창 오픈 방식입니다.
 |`user_id`|매체 회원아이디 (로그인을 완료한 회원 대상)|
 |`add_param`|업체 요청 파라미터 (필요시 추가)|
 
-전송 방법) GET   
-URL) http://www.pointpay.im/pointhub/direct.php    
+|URL|전송 방법|
+|------|:---:|
+|http://www.pointpay.im/pointhub/direct.php|GET|
 
-_*모든 파라미터명은 소문자를 사용합니다._
-
-예시)
-```js
-window.open(
-'http://www.pointpay.im/pointhub/direct.php?a_code=매체코드&user_id=매체회원아이디', 
-'width=510, height=800, resizable=0, scrollbars=no, status=0, titlebar=0, toolbar=0, left=435, top=100' 
-);
-```
+> 전송 방법: **GET**   
+> URL: **http://www.pointpay.im/pointhub/direct.php**
+>
+> _*모든 파라미터명은 소문자를 사용합니다._
+>
+> **예시)**
+> ```js
+> window.open(
+> 'http://www.pointpay.im/pointhub/direct.php?a_code=매체코드&user_id=매체회원아이디', 
+> 'width=510, height=800, resizable=0, scrollbars=no, status=0, titlebar=0, toolbar=0, left=435, top=100' 
+> );
+> ```
 
 ## 포인트 전환 후(링크)
 
