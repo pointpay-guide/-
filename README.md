@@ -20,12 +20,10 @@ JS를 통한 팝업창 오픈 방식입니다.
 |`user_id`|매체 회원아이디 (로그인을 완료한 회원 대상)|
 |`add_param`|업체 요청 파라미터 (필요시 추가)|
 
-|URL|전송 방법|
-|------|:---:|
-|http://www.pointpay.im/pointhub/direct.php|GET|
 
-> 전송 방법: **GET**   
-> URL: **http://www.pointpay.im/pointhub/direct.php**
+> |URL|전송 방법|
+> |------|:---:|
+> |http://www.pointpay.im/pointhub/direct.php|GET|
 >
 > _*모든 파라미터명은 소문자를 사용합니다._
 >
