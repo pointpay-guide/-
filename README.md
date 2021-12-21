@@ -1,7 +1,7 @@
 # 📝실물가맹점 연동 가이드
 
 - [실물가맹점](#실물가맹점-연동-가이드)   
-- [컨텐츠가맹점](#)   
+- [컨텐츠가맹점](../../../guide-2/#컨텐츠가맹점-연동-가이드)   
 - [담당자 정보](../../../Responsibility/#담당자-정보)   
 
 ---
@@ -27,7 +27,7 @@ JS를 통한 팝업창 오픈 방식입니다.
 
 |URL|전송 방법|
 |------|:---:|
-|http://www.pointpay.im/pointhub/direct.php|GET|
+|http://www.pointpay.im/pointhub/direct|GET|
 
 |전달 파라미터|내용|
 |------|---|
@@ -42,7 +42,7 @@ JS를 통한 팝업창 오픈 방식입니다.
  **예시)**
  ```js
  window.open(
- 'http://www.pointpay.im/pointhub/direct.php?a_code=매체코드&user_id=매체회원아이디', 
+ 'http://www.pointpay.im/pointhub/direct?a_code=매체코드&user_id=매체회원아이디', 
  'width=510, height=800, resizable=0, scrollbars=no, status=0, titlebar=0, toolbar=0, left=435, top=100' 
  );
  ```
@@ -58,7 +58,7 @@ JS를 통한 팝업창 오픈 방식입니다.
 
 |URL|전송 방법|
 |------|:---:|
-|http://www.pointpay.im/pointhub/direct_ci.php|POST|
+|http://www.pointpay.im/pointhub/direct_ci|POST|
 
 |전달 파라미터|내용|
 |------|---|
@@ -77,7 +77,7 @@ JS를 통한 팝업창 오픈 방식입니다.
 ```js
 function onSubmit(){
     var pay_form = document.Form;
-    var url = "http://www.pointpay.im/pointhub/direct_ci.php";
+    var url = "http://www.pointpay.im/pointhub/direct_ci";
     window.open("" ,"Form", 
     "width=510, height=800, resizable=0, scrollbars=no, status=0, titlebar=0, toolbar=0, left=435, top=100"); 
     pay_form.action =url; 
