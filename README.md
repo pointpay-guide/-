@@ -52,8 +52,6 @@ JS를 통한 팝업창 오픈 방식입니다.
 
 #### 조회팝업 호출 방식
 
-> 현재 이용이 불가능 합니다.
-
 JS를 통한 팝업창 오픈 방식입니다.
 
 |URL|전송 방법|
@@ -69,35 +67,8 @@ JS를 통한 팝업창 오픈 방식입니다.
 |`user_phone`|고객휴대폰번호|O|
 |`add_param`|업체 요청 파라미터 (필요시 추가)|
 
-
-
  _*모든 파라미터명은 소문자를 사용합니다._
 
-
- **예시)**
-```js
-function onSubmit(){
-    var pay_form = document.Form;
-    var url = "https://ssl.pointpay.im/pointhub/direct_ci";
-    window.open("" ,"Form", 
-    "width=510, height=800, resizable=0, scrollbars=no, status=0, titlebar=0, toolbar=0, left=435, top=100"); 
-    pay_form.action =url; 
-    pay_form.method="post";
-    pay_form.target="Form";
-    pay_form.submit();
-}
-```
-```html
-<form name="Form">
-    <input type="hidden" name="a_code" value="pointpay" />
-    <input type="hidden" name="user_id" value="user_id" />
-    <input type="hidden" name="add_param" value="add_param" />
-    <input type="hidden" name="user_ci" value="user_ci" />
-    <input type="hidden" name="user_name" value="user_name" />
-    <input type="hidden" name="user_phone" value="user_phone" />
-</form>
-```
-<br/>
 
 ## 포인트 전환 후
 
