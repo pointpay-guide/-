@@ -46,7 +46,9 @@ JS를 통한 팝업창 오픈 방식입니다.
  'width=510, height=800, resizable=0, scrollbars=no, status=0, titlebar=0, toolbar=0, left=435, top=100' 
  );
  ```
+ 
 <br/>
+
 
 ## 포인트 전환 - 무인증
 
@@ -69,6 +71,7 @@ JS를 통한 팝업창 오픈 방식입니다.
 
  _*모든 파라미터명은 소문자를 사용합니다._
 
+<br/>
 
 ## 포인트 전환 후
 
