@@ -16,18 +16,21 @@
 
 ## 업데이트
 - 21.12.17 연동가이드 제작
+- 22.02.04 무인증조회 추가
 
 <br/>
 
 ## 포인트전환 - 인증
 
-#### 결제팝업 호출 방식
+#### 결제팝업 호출
 
 JS를 통한 팝업창 오픈 방식입니다.
 
-|URL|전송 방법|
-|------|:---:|
-|https://ssl.pointpay.im/pointhub/direct|GET|
+|서버|URL|전송 방법|
+|--|------|:---:|
+|개발|http://dev.pointpay.im/pointhub/direct|GET|
+|상용|https://ssl.pointpay.im/pointhub/direct|GET|
+
 
 |전달 파라미터|내용|필수여부|
 |------|---|---|
@@ -52,24 +55,72 @@ JS를 통한 팝업창 오픈 방식입니다.
 
 ## 포인트 전환 - 무인증
 
-#### 조회팝업 호출 방식
+### 1. 조회팝업 호출
 
 JS를 통한 팝업창 오픈 방식입니다.
 
-|URL|전송 방법|
-|------|:---:|
-|https://ssl.pointpay.im/pointhub/direct_ci|POST|
+|서버|URL|전송 방법|
+|--|------|:---:|
+|개발|http://dev.pointpay.im/pointhub/direct_ci|POST|
+|상용|https://ssl.pointpay.im/pointhub/direct_ci|POST|
 
 |전달 파라미터|내용|필수여부|
 |------|---|---|
 |`a_code`|매체코드(포인트페이 발급아이디)|O|
 |`user_id`|매체 회원아이디 (로그인을 완료한 회원 대상)|O|
-|`user_ci`|고객 CI|O|
-|`user_name`|고객명|O|
-|`user_phone`|고객휴대폰번호|O|
 |`add_param`|업체 요청 파라미터 (필요시 추가)|
 
  _*모든 파라미터명은 소문자를 사용합니다._
+ 
+  **예시)**
+```js
+function onSubmit(){
+    var pay_form = document.Form;
+    var url = "https://ssl.pointpay.im/pointhub/direct_ci";
+    window.open("" ,"Form", 
+    "width=510, height=800, resizable=0, scrollbars=no, status=0, titlebar=0, toolbar=0, left=435, top=100"); 
+    pay_form.action =url; 
+    pay_form.method="post";
+    pay_form.target="Form";
+    pay_form.submit();
+}
+```
+```html
+<form name="Form">
+    <input type="hidden" name="a_code" value="pointpay" />
+    <input type="hidden" name="user_id" value="user_id" />
+    <input type="hidden" name="add_param" value="add_param" />
+</form>
+```
+
+<br/>
+
+### 2. 서버간 연동(S2S)
+
+고객 중요정보는 서버간 연동을 통해 전달 받습니다.
+
+#### URL : 가맹점에서 알려준 URL
+### REQUEST
+|파라미터|내용|필수여부|
+|------|---|---|
+|`token`|업체 전달 key값(md5암호화)|O|
+|`en_user_id`|고객아이디(md5암호화)|O|
+
+> token 값과 en_user_id 값으로 유효성체크를 해주세요.
+
+### RESPONSE
+> time out : 5초
+>
+|파라미터|내용|필수여부|예시|
+|------|---|---|---|
+|`ret_code`|리턴코드|O|성공 : 201 / 실패: 202|
+|`ret_msg`|리턴메시지||실패일경우 전달|
+|`user_ci`|고객 CI|O||
+|`user_name`|고객명|O|박주영(UTF-8)|
+|`user_phone`|고객휴대폰번호|O|01012345678|
+
+
+> 고객 중요정보값이 넘어오지않거나 202응답을 받으면 포인트 전환이되지 않습니다.
 
 <br/>
 
