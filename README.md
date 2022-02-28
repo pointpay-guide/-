@@ -46,7 +46,7 @@ JS를 통한 팝업창 오픈 방식입니다.
  ```js
  window.open(
  'https://ssl.pointpay.im/pointhub/direct?a_code=매체코드&user_id=매체회원아이디', 
- 'width=510, height=800, resizable=0, scrollbars=no, status=0, titlebar=0, toolbar=0, left=435, top=100' 
+ 'cert2_popup', 'width=765, height=895, resizable=auto, scrollbars=yes, status=no'
  );
  ```
  
@@ -78,7 +78,7 @@ function onSubmit(){
     var pay_form = document.Form;
     var url = "https://ssl.pointpay.im/pointhub/direct_ci";
     window.open("" ,"Form", 
-    "width=510, height=800, resizable=0, scrollbars=no, status=0, titlebar=0, toolbar=0, left=435, top=100"); 
+    "width=765, height=895, resizable=auto, scrollbars=yes, status=no"); 
     pay_form.action =url; 
     pay_form.method="post";
     pay_form.target="Form";
